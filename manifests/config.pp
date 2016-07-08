@@ -40,7 +40,7 @@ class artifactory_ha::config {
   file { "${::artifactory::artifactory_home}/etc/ha-node.properties":
     ensure  => file,
     content => epp(
-      'artifactory_ha/ha-node.propertes.epp',
+      'artifactory/ha-node.propertes.epp',
       {
         cluster_home    => $::artifactory_ha::cluster_home,
         membership_port => $::artifactory_ha::membership_port,
@@ -54,7 +54,7 @@ class artifactory_ha::config {
     ensure => absent,
   }
 
-  file { "${::artifactory_pro::cluster_home}/ha-etc/storage.properties":
+  file { "${::artifactory_ha::cluster_home}/ha-etc/storage.properties":
     ensure  => file,
     content => epp(
       'artifactory/storage.properties.epp',
