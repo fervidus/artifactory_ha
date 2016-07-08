@@ -35,7 +35,7 @@ class artifactory_ha(
 
   $storage_properties_location = "${cluster_home}/ha-etc/plugins"
 
-  class {'::artifactory_pro::install':
+  class {'::artifactory_pro':
     license_key  => $license_key,
     yum_name     => $yum_name,
     yum_baseurl  => $yum_baseurl,
@@ -43,4 +43,6 @@ class artifactory_ha(
   } ->
   class{'::artifactory_ha::config': } ~>
   Class['::artifactory::service']
+
+  contain ::artifactory_pro
 }
