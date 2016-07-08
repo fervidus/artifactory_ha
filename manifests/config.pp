@@ -19,7 +19,7 @@ class artifactory_ha::config {
   }
 
   # Create the plugins directory
-  file { "${::artifactory::clusterhome}/ha-etc/plugins":
+  file { "${::artifactory_ha::cluster_home}/ha-etc/plugins":
     ensure  => directory,
   }
 
