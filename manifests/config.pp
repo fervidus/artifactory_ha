@@ -38,7 +38,7 @@ class artifactory_ha::config {
   }
 
   file { "${::artifactory::artifactory_home}/etc/ha-node.properties":
-    ensure  => absent,
+    ensure  => file,
     content => epp(
       'artifactory_ha/ha-node.propertes.epp',
       {
