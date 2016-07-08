@@ -42,11 +42,9 @@ class artifactory_ha::config {
     content => epp(
       'artifactory_ha/ha-node.propertes.epp',
       {
-        node_id         => $::artifactory_ha::node_id,
         cluster_home    => $::artifactory_ha::cluster_home,
-        context_url     => $::artifactory_ha::context_url,
         membership_port => $::artifactory_ha::membership_port,
-        primary         => $::artifactory_ha::primary,
+        is_primary      => $::artifactory_ha::is_primary,
       }
     ),
     mode    => '0644',
