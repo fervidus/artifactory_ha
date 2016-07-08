@@ -40,7 +40,7 @@ class artifactory_ha::config {
   file { "${::artifactory::artifactory_home}/etc/ha-node.properties":
     ensure  => file,
     content => epp(
-      'artifactory/ha-node.properties.epp',
+      'artifactory_ha/ha-node.properties.epp',
       {
         cluster_home    => $::artifactory_ha::cluster_home,
         membership_port => $::artifactory_ha::membership_port,
