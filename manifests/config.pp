@@ -88,6 +88,20 @@ class artifactory_ha::config {
     mode    => '0664',
   }
 
+  file { "${::artifactory_ha::cluster_home}/ha-etc/artifactory.system.properties":
+    ensure  => file,
+    source  => "${::artifactory::artifactory_home}/etc/artifactory.system.properties",
+    replace => false,
+    mode    => '0600',
+  }
+
+  file { "${::artifactory_ha::cluster_home}/ha-etc/mimetypes.xml":
+    ensure  => file,
+    source  => "${::artifactory::artifactory_home}/etc/mimetypes.xml",
+    replace => false,
+    mode    => '0770',
+  }
+
   file { "${::artifactory::artifactory_home}/tomcat/lib/mysql-connector-java-5.1.39-bin.jar":
     ensure => file,
     source => 'puppet:///modules/artifactory/mysql-connector-java-5.1.39-bin.jar',
