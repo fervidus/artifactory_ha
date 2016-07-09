@@ -43,12 +43,4 @@ class artifactory_ha(
   } ->
   class{'::artifactory_ha::config': } ~>
   Class['::artifactory::service']
-
-
-  #class{'::artifactory_ha::post_config': }
-#
-  #Class['::artifactory_ha::config'] ~> Class['::artifactory::service']
-  #Class['::artifactory_ha::post_config'] ~> Class['::artifactory::service']
-#
-  #contain ::artifactory_pro
 }
