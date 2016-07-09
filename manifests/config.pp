@@ -9,34 +9,6 @@ class artifactory_ha::config {
     group => 'artifactory',
   }
 
-  # Configure cluster home
-  file { $::artifactory_ha::cluster_home:
-    ensure => directory,
-  }
-
-  file { "${::artifactory_ha::cluster_home}/ha-etc":
-    ensure => directory,
-  }
-
-  # Create the plugins directory
-  file { "${::artifactory_ha::cluster_home}/ha-etc/plugins":
-    ensure  => directory,
-  }
-
-  file { "${::artifactory_ha::cluster_home}/ha-data":
-    ensure => directory,
-  }
-
-  file { "${::artifactory_ha::cluster_home}/ha-backup":
-    ensure => directory,
-  }
-
-  # Setup cluster.properties
-  file { "${::artifactory_ha::cluster_home}/cluster.properties":
-    ensure  => file,
-    content => "security.token=${::artifactory_ha::security_token}",
-  }
-
   file { "${::artifactory::artifactory_home}/etc/ha-node.properties":
     ensure  => file,
     content => epp(
@@ -52,6 +24,26 @@ class artifactory_ha::config {
 
   file { "${::artifactory::artifactory_home}/etc/storage.properties":
     ensure => absent,
+  }
+
+  # Configure cluster home
+  file { $::artifactory_ha::cluster_home:
+    ensure => directory,
+  }
+
+  file { "${::artifactory_ha::cluster_home}/ha-etc":
+    ensure => directory,
+  }
+
+  # Create the plugins directory
+  file { "${::artifactory_ha::cluster_home}/ha-etc/plugins":
+    ensure  => directory,
+  }
+
+  # Setup cluster.properties
+  file { "${::artifactory_ha::cluster_home}/ha-etc/cluster.properties":
+    ensure  => file,
+    content => "security.token=${::artifactory_ha::security_token}",
   }
 
   file { "${::artifactory_ha::cluster_home}/ha-etc/storage.properties":
@@ -75,6 +67,14 @@ class artifactory_ha::config {
     mode    => '0664',
   }
 
+  file { "${::artifactory_ha::cluster_home}/ha-data":
+    ensure => directory,
+  }
+
+  file { "${::artifactory_ha::cluster_home}/ha-backup":
+    ensure => directory,
+  }
+
   file { "${::artifactory_ha::cluster_home}/ha-etc/artifactory.system.properties":
     ensure  => file,
     source  => "${::artifactory::artifactory_home}/etc/artifactory.system.properties",
@@ -82,15 +82,15 @@ class artifactory_ha::config {
     mode    => '0600',
   }
 
-  file { "${::artifactory_ha::cluster_home}/ha-etc/mimetypes.xml":
-    ensure  => file,
-    source  => "${::artifactory::artifactory_home}/etc/mimetypes.xml",
-    replace => false,
-    mode    => '0770',
-  }
-
-  file { "${::artifactory::artifactory_home}/tomcat/lib/mysql-connector-java-5.1.39-bin.jar":
-    ensure => file,
-    source => 'puppet:///modules/artifactory/mysql-connector-java-5.1.39-bin.jar',
-  }
+  #file { "${::artifactory_ha::cluster_home}/ha-etc/mimetypes.xml":
+  #  ensure  => file,
+  #  source  => "${::artifactory::artifactory_home}/etc/mimetypes.xml",
+  #  replace => false,
+  #  mode    => '0770',
+  #}
+#
+  #file { "${::artifactory::artifactory_home}/tomcat/lib/mysql-connector-java-5.1.39-bin.jar":
+  #  ensure => file,
+  #  source => 'puppet:///modules/artifactory/mysql-connector-java-5.1.39-bin.jar',
+  #}
 }

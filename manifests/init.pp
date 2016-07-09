@@ -41,11 +41,14 @@ class artifactory_ha(
     yum_baseurl  => $yum_baseurl,
     package_name => $package_name,
   } ->
-  class{'::artifactory_ha::config': } ->
-  class{'::artifactory_ha::post_config': }
+  class{'::artifactory_ha::config': } ~>
+  Class['::artifactory::service']
 
-  Class['::artifactory_ha::config'] ~> Class['::artifactory::service']
-  Class['::artifactory_ha::post_config'] ~> Class['::artifactory::service']
 
-  contain ::artifactory_pro
+  #class{'::artifactory_ha::post_config': }
+#
+  #Class['::artifactory_ha::config'] ~> Class['::artifactory::service']
+  #Class['::artifactory_ha::post_config'] ~> Class['::artifactory::service']
+#
+  #contain ::artifactory_pro
 }
