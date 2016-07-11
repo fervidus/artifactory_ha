@@ -75,8 +75,10 @@ class artifactory_ha::config {
     ensure => directory,
   }
 
-  file { "${::artifactory::artifactory_home}/tomcat/lib/mysql-connector-java-5.1.39-bin.jar":
-    ensure => file,
-    source => 'puppet:///modules/artifactory/mysql-connector-java-5.1.39-bin.jar',
+  $file_name =  regsubst($::artifactory::jdbc_driver_url, '.+\/([^\/]+)$', '\1')
+
+  ::staging::deploy { $file_name:
+    target => "${::artifactory::artifactory_home}/tomcat/lib/${file_name}":
+    source => $::artifactory::jdbc_driver_url,
   }
 }
