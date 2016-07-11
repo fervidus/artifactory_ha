@@ -79,6 +79,6 @@ class artifactory_ha::config {
 
   ::staging::deploy { $file_name:
     target => "${::artifactory::artifactory_home}/tomcat/lib/${file_name}",
-    source => $::artifactory::jdbc_driver_url,
+    source => $::artifactory_ha::jdbc_driver_url,
   }
 }
