@@ -79,5 +79,7 @@ class artifactory_ha::config {
 
   ::wget::fetch { $::artifactory_ha::jdbc_driver_url:
     destination => "${::artifactory::artifactory_home}/tomcat/lib/",
+    mode        => '0775',
+    execuser    => 'artifactory',
   }
 }
