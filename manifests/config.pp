@@ -75,10 +75,9 @@ class artifactory_ha::config {
     ensure => directory,
   }
 
-  $file_name =  regsubst($::artifactory_ha::jdbc_driver_url, '.+\/([^\/]+)$', '\1')
+  #$file_name =  regsubst($::artifactory_ha::jdbc_driver_url, '.+\/([^\/]+)$', '\1')
 
-  ::staging::deploy { $file_name:
-    target => "${::artifactory::artifactory_home}/tomcat/lib/${file_name}",
-    source => $::artifactory_ha::jdbc_driver_url,
+  ::wget::fetch { $::artifactory_ha::jdbc_driver_url:
+    destination => "${::artifactory::artifactory_home}/tomcat/lib",
   }
 }
