@@ -15,9 +15,7 @@ define artifactory_ha::plugin(
 
   ::wget::fetch { $url:
     destination => "${::artifactory_ha::cluster_home}/ha-etc/plugins/${file_name}",
-  }
-
-  file { "${::artifactory_ha::cluster_home}/ha-etc/plugins/${file_name}":
-    ensure => file,
+    execuser    => 'artifactory',
+    mode        => 'a+rx',
   }
 }
