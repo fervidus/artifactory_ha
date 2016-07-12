@@ -78,6 +78,6 @@ class artifactory_ha::config {
   #$file_name =  regsubst($::artifactory_ha::jdbc_driver_url, '.+\/([^\/]+)$', '\1')
 
   ::wget::fetch { $::artifactory_ha::jdbc_driver_url:
-    destination => "${::artifactory::artifactory_home}/tomcat/lib",
+    destination => "${::artifactory::artifactory_home}/tomcat/lib/",
   }
 }
