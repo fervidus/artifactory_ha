@@ -17,5 +17,8 @@ define artifactory_ha::plugin(
     destination => "${::artifactory_ha::cluster_home}/ha-etc/plugins/${file_name}",
     execuser    => 'artifactory',
     mode        => 'a+rx',
+  } ->
+  file {"${::artifactory_ha::cluster_home}/ha-etc/plugins/${file_name}":
+    ensure => file,
   }
 }

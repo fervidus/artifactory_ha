@@ -32,6 +32,7 @@ class artifactory_ha(
   Optional[Integer] $binary_provider_cache_maxSize                        = undef,
   Optional[String] $binary_provider_filesystem_dir                        = undef,
   Optional[String] $binary_provider_cache_dir                             = undef,
+  Optional[Hash] $plugin_urls                                             = undef,
 ) {
 
   $storage_properties_location = "${cluster_home}/ha-etc/plugins"
@@ -42,6 +43,12 @@ class artifactory_ha(
     yum_baseurl  => $yum_baseurl,
     package_name => $package_name,
   } ->
-  class{'::artifactory_ha::config': } ~>
+  class{'::artifactory_ha::config': } ->
+  class{'::artifactory_ha::post_config': }
+
+  Class['::artifactory_ha::config'] ~>
+  Class['::artifactory::service']
+
+  Class['::artifactory_ha::post_config'] ~>
   Class['::artifactory::service']
 }
