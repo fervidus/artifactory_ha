@@ -12,13 +12,9 @@ define artifactory_ha::plugin(
   }
 
   $file_name =  regsubst($url, '.+\/([^\/]+)$', '\1')
-
-  ::wget::fetch { $url:
-    destination => "${::artifactory_ha::cluster_home}/ha-etc/plugins/${file_name}",
-    execuser    => 'artifactory',
-    mode        => 'a+rx',
-  } ->
+  
   file {"${::artifactory_ha::cluster_home}/ha-etc/plugins/${file_name}":
     ensure => file,
+    source => $url,
   }
 }
