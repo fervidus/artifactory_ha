@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe 'artifactory_ha' do
+  let(:params) { {:license_key => 'my_license_key'} }
+
   context 'supported operating systems' do
     on_supported_os.each do |os, facts|
       context "on #{os}" do
@@ -8,31 +10,21 @@ describe 'artifactory_ha' do
           facts
         end
 
-        context "artifactory_ha class without any parameters" do
+        context "artifactory_ha class with minimum configs" do
           it { is_expected.to compile.with_all_deps }
 
-          it { is_expected.to contain_class('artifactory_ha::params') }
-          it { is_expected.to contain_class('artifactory_ha::install').that_comes_before('artifactory_ha::config') }
+          #it { is_expected.to contain_class('artifactory_pro::params') }
+          it { is_expected.to contain_class('artifactory_pro').that_comes_before('artifactory_ha::config') }
+          it { is_expected.to contain_class('artifactory_ha::config').that_comes_before('artifactory_ha::post_config') }
           it { is_expected.to contain_class('artifactory_ha::config') }
-          it { is_expected.to contain_class('artifactory_ha::service').that_subscribes_to('artifactory_ha::config') }
+          it { is_expected.to contain_class('artifactory_ha::post_config') }
+          it { is_expected.to contain_class('artifactory::service').that_subscribes_to('artifactory_ha::config') }
+          it { is_expected.to contain_class('artifactory::service').that_subscribes_to('artifactory_ha::post_config') }
 
-          it { is_expected.to contain_service('artifactory_ha') }
-          it { is_expected.to contain_package('artifactory_ha').with_ensure('present') }
+          it { is_expected.to contain_service('artifactory') }
+          it { is_expected.to contain_package('jfrog-artifactory-pro').with_ensure('present') }
         end
       end
-    end
-  end
-
-  context 'unsupported operating system' do
-    describe 'artifactory_ha class without any parameters on Solaris/Nexenta' do
-      let(:facts) do
-        {
-          :osfamily        => 'Solaris',
-          :operatingsystem => 'Nexenta',
-        }
-      end
-
-      it { expect { is_expected.to contain_package('artifactory_ha') }.to raise_error(Puppet::Error, /Nexenta not supported/) }
     end
   end
 end

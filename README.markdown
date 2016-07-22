@@ -12,6 +12,14 @@
 
 ## Overview
 
+This ONLY install Artifactory HA.
+
+If you are looking for the regulare commercial installation, or OSS, look at:
+
+Artifactory OSS: https://forge.puppet.com/autostructure/artifactory
+
+Artifactory PRO: https://forge.puppet.com/autostructure/artifactory_pro
+
 Github and gitlab are great for storing source control, but bad at storing installers and compiled packages.
 
 This is where Artifactory comes in. It stores all of your organizations artifacts in an organized and secure manner.
