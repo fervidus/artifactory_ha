@@ -1,6 +1,6 @@
 {
   "name": "autostructure-artifactory_ha",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Bryan Belanger",
   "summary": "Installs Artifactory high availability",
   "license": "Apache-2.0",
@@ -9,13 +9,25 @@
   "issues_url": "https://github.com/autostructure/artifactory_ha/issues",
   "dependencies": [
     {
+      "name": "maestrodev-wget",
+      "version_requirement": ">= 1.4.0"
+    },
+    {
       "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 4.0.0"
+    },
+    {
+      "name": "autostruture-artifactory",
+      "version_requirement": ">= 1.0.0"
+    },
+    {
+      "name": "autostruture-pro",
       "version_requirement": ">= 1.0.0"
     }
   ],
   "operatingsystem_support": [
     {
-      "operatingsystem": "Debian",
+      "operatingsystem": "CentOS",
       "operatingsystemrelease": [
         "6",
         "7"
@@ -24,7 +36,6 @@
     {
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [
-        "5",
         "6",
         "7"
       ]

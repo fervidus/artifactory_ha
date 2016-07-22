@@ -12,9 +12,10 @@ define artifactory_ha::plugin(
   }
 
   $file_name =  regsubst($url, '.+\/([^\/]+)$', '\1')
-  
+
   file {"${::artifactory_ha::cluster_home}/ha-etc/plugins/${file_name}":
     ensure => file,
     source => $url,
+    notify => Class['::artifactory::service'],
   }
 }
