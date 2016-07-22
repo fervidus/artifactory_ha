@@ -12,7 +12,7 @@ describe 'artifactory_ha' do
       db_password: 'egpiqwgoq[hgewoiehf]',
       security_token: '123security_token_4me',
       is_primary: true,
-      cluster_home: '/nfs/home/mnt',
+      cluster_home: '/nfs/home/mnt'
     }
   }
 
