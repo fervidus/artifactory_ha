@@ -56,7 +56,7 @@ class artifactory_ha::config {
         db_username                    => $::artifactory_ha::db_username,
         db_password                    => $::artifactory_ha::db_password,
         db_type                        => $::artifactory_ha::db_type,
-        binary_provider_type           => $::artifactory_ha::binaryvider_type,
+        binary_provider_type           => $::artifactory_ha::binary_provider_type,
         pool_max_active                => $::artifactory_ha::pool_max_active,
         pool_max_idle                  => $::artifactory_ha::pool_max_idle,
         binary_provider_cache_maxSize  => $::artifactory_ha::binary_provider_cache_maxSize,
