@@ -6,7 +6,7 @@ describe 'artifactory_ha' do
       license_key: 'my_license_key',
       jdbc_driver_url: 'http://autostructure.com/my_url',
       db_type: 'mysql',
-      db_port: '1001',
+      db_port: 1001,
       db_hostname: 'db.autostructure.com',
       db_username: 'my_db_user',
       db_password: 'egpiqwgoq[hgewoiehf]',
