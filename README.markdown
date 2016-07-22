@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/autostructure/artifactory_ha.svg?branch=master)](https://travis-ci.org/autostructure/artifactory_ha)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/autostructure/artifactory_ha.svg)](https://forge.puppetlabs.com/autostructure/artifactory_ha)
+[![Puppet Forge](https://img.shields.io/puppetforge/f/autostructure/artifactory_ha.svg)](https://forge.puppetlabs.com/autostructure/artifactory_ha)
+
 #### Table of Contents
 
 1. [Overview](#overview)
