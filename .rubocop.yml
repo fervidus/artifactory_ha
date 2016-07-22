@@ -211,7 +211,7 @@ Style/SpaceInsideParens:
 Style/LeadingCommentSpace:
   Enabled: false
 
-Style/SingleSpaceBeforeFirstArg:
+Style/SpaceBeforeFirstArg:
   Enabled: false
 
 Style/SpaceAfterColon:
@@ -220,7 +220,10 @@ Style/SpaceAfterColon:
 Style/SpaceAfterComma:
   Enabled: false
 
-Style/SpaceAfterControlKeyword:
+Style/SpaceAroundKeyword:
+  Enabled: false
+
+Style/BlockDelimiters:
   Enabled: false
 
 Style/SpaceAfterMethodName:
@@ -323,8 +326,11 @@ Style/TrailingWhitespace:
 Style/StringLiterals:
   Enabled: false
 
-Style/TrailingComma:
-  Enabled: false
+Style/TrailingCommaInLiteral:
+  Enabled: true
+
+Style/TrailingCommaInArguments:
+  Enabled: true
 
 Style/GlobalVars:
   Enabled: false
