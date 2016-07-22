@@ -1,7 +1,20 @@
 require 'spec_helper'
 
 describe 'artifactory_ha' do
-  let(:params) { {:license_key => 'my_license_key'} }
+  let(:params) {
+     {
+       :license_key     => 'my_license_key',
+       :jdbc_driver_url => 'http://autostructure.com/my_url',
+       :db_type         => 'mysql',
+       :db_port         => '1001',
+       :db_hostname     => 'db.autostructure.com',
+       :db_username     => 'my_db_user',
+       :db_password     => 'egpiqwgoq[hgewoiehf]',
+       :security_token  => '123security_token_4me',
+       :is_primary      => true,
+       :cluster_home    => '/nfs/home/mnt',
+     }
+   }
 
   context 'supported operating systems' do
     on_supported_os.each do |os, facts|
