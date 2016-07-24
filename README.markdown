@@ -116,6 +116,12 @@ Sets the package name to install. Defaults to 'jfrog-artifactory-pro'.
 
 This can be changed if Artifactory needs to install a differently named package. Possibly needed if na organization creates their own Artifactory package.
 
+##### `manage_java`
+
+Tells the module whether or not to manage the java class. This defaults to true. Usually this is what you want.
+
+If your organization actively manages the java installs across your environment set this to false.
+
 ##### `jdbc_driver_url`
 
 Sets the location for the jdbc driver. Uses the wget module to retrieve the driver.
