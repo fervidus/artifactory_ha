@@ -51,8 +51,7 @@ class artifactory_ha::config {
     content => epp(
       'artifactory/storage.properties.epp',
       {
-        db_port                        => $::artifactory_ha::db_port,
-        db_hostname                    => $::artifactory_ha::db_hostname,
+        db_url                         => $::artifactory_ha::db_url,
         db_username                    => $::artifactory_ha::db_username,
         db_password                    => $::artifactory_ha::db_password,
         db_type                        => $::artifactory_ha::db_type,

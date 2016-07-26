@@ -14,8 +14,7 @@
 class artifactory_ha(
   String $jdbc_driver_url,
   Enum['mssql', 'mysql', 'oracle', 'postgresql'] $db_type,
-  Integer $db_port,
-  String $db_hostname,
+  String $db_url,
   String $db_username,
   String $db_password,
   String $security_token,

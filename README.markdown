@@ -48,9 +48,8 @@ Artifactory ha requires a license key, cluster configurations and nfs location i
 class { '::artifactory_ha':
   license_key                    => 'abc123',
   jdbc_driver_url                => 'puppet://modules/my_module/mysql.jar',
-  db_type                        => 'mysql',
-  db_port                        => 3306,
-  db_hostname                    => 'mysqldb.evilcorp.com',
+  db_type                        => 'oracle',
+  db_url                         => 'jdbc:oracle:thin:@somedomain.com:1521:arti001',
   db_username                    => 'my_username',
   db_password                    => 'efw23gn2j3',
   $security_token                => 'ABC1MY0Token1',
