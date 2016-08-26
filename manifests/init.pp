@@ -45,7 +45,9 @@ class artifactory_ha(
   class{'::artifactory_ha::config': } ->
   class{'::artifactory_ha::post_config': }
 
-  Class['::artifactory_ha::config'] ~>
+  # Ensure Artifactory Pro is configured before Artifactory HA.
+  Class['::artifactory_pro::config'] ->
+  Class['::artifactory_ha::config']  ~>
   Class['::artifactory::service']
 
   Class['::artifactory_ha::post_config'] ~>
