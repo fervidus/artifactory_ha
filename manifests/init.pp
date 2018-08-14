@@ -28,7 +28,7 @@ class artifactory_ha(
   Optional[Enum['filesystem', 'fullDb','cachedFS']] $binary_provider_type = undef,
   Optional[Integer] $pool_max_active                                      = undef,
   Optional[Integer] $pool_max_idle                                        = undef,
-  Optional[Integer] $binary_provider_cache_maxSize                        = undef,
+  Optional[Integer] $binary_provider_cache_maxsize                        = undef,
   Optional[String] $binary_provider_filesystem_dir                        = undef,
   Optional[String] $binary_provider_cache_dir                             = undef,
   Hash $plugin_urls                                                       = {},
@@ -41,15 +41,15 @@ class artifactory_ha(
     yum_name     => $yum_name,
     yum_baseurl  => $yum_baseurl,
     package_name => $package_name,
-  } ->
-  class{'::artifactory_ha::config': } ->
-  class{'::artifactory_ha::post_config': }
+  }
+  -> class{'::artifactory_ha::config': }
+  -> class{'::artifactory_ha::post_config': }
 
   # Ensure Artifactory Pro is configured before Artifactory HA.
-  Class['::artifactory_pro::config'] ->
-  Class['::artifactory_ha::config']  ~>
-  Class['::artifactory::service']
+  Class['::artifactory_pro::config']
+  -> Class['::artifactory_ha::config']
+  ~> Class['::artifactory::service']
 
-  Class['::artifactory_ha::post_config'] ~>
-  Class['::artifactory::service']
+  Class['::artifactory_ha::post_config']
+  ~> Class['::artifactory::service']
 }

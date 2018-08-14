@@ -3,7 +3,7 @@ require 'spec_helper_acceptance'
 describe 'artifactory_ha class' do
   context 'default parameters' do
     # Using puppet_apply as a helper
-    it 'should work idempotently with no errors' do
+    it 'will work idempotently with no errors' do
       pp = <<-EOS
       class { 'artifactory_ha': }
       EOS

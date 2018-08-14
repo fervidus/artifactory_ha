@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'artifactory_ha' do
-  let(:params) {
+  let(:params) do
     {
       license_key: 'my_license_key',
       jdbc_driver_url: 'http://autostructure.com/my_url',
@@ -11,9 +11,9 @@ describe 'artifactory_ha' do
       db_password: 'egpiqwgoq[hgewoiehf]',
       security_token: '123security_token_4me',
       is_primary: true,
-      cluster_home: '/nfs/home/mnt'
+      cluster_home: '/nfs/home/mnt',
     }
-  }
+  end
 
   context 'supported operating systems' do
     on_supported_os.each do |os, facts|
@@ -22,7 +22,7 @@ describe 'artifactory_ha' do
           facts
         end
 
-        context "artifactory_ha class with minimum configs" do
+        context 'artifactory_ha class with minimum configs' do
           it { is_expected.to compile.with_all_deps }
 
           # it { is_expected.to contain_class('artifactory_pro::params') }

@@ -58,7 +58,7 @@ class artifactory_ha::config {
         binary_provider_type           => $::artifactory_ha::binary_provider_type,
         pool_max_active                => $::artifactory_ha::pool_max_active,
         pool_max_idle                  => $::artifactory_ha::pool_max_idle,
-        binary_provider_cache_maxSize  => $::artifactory_ha::binary_provider_cache_maxSize,
+        binary_provider_cache_maxSize  => $::artifactory_ha::binary_provider_cache_maxsize,
         binary_provider_filesystem_dir => $::artifactory_ha::binary_provider_filesystem_dir,
         binary_provider_cache_dir      => $::artifactory_ha::binary_provider_cache_dir,
       }
@@ -78,8 +78,8 @@ class artifactory_ha::config {
 
   ::wget::fetch { $::artifactory_ha::jdbc_driver_url:
     destination => "${::artifactory::artifactory_home}/tomcat/lib/",
-  } ->
-  file { "${::artifactory::artifactory_home}/tomcat/lib/${file_name}":
+  }
+  -> file { "${::artifactory::artifactory_home}/tomcat/lib/${file_name}":
     mode => '0755',
   }
 }
