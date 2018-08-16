@@ -49,7 +49,7 @@ class artifactory_ha::config {
   file { "${::artifactory_ha::cluster_home}/ha-etc/storage.properties":
     ensure  => file,
     content => epp(
-      'artifactory/storage.properties.epp',
+      'artifactory/db.properties.epp',
       {
         db_url                         => $::artifactory_ha::db_url,
         db_username                    => $::artifactory_ha::db_username,
@@ -76,7 +76,7 @@ class artifactory_ha::config {
 
   $file_name =  regsubst($::artifactory_ha::jdbc_driver_url, '.+\/([^\/]+)$', '\1')
 
-  ::wget::fetch { $::artifactory_ha::jdbc_driver_url:
+  wget::fetch { $::artifactory_ha::jdbc_driver_url:
     destination => "${::artifactory::artifactory_home}/tomcat/lib/",
   }
   -> file { "${::artifactory::artifactory_home}/tomcat/lib/${file_name}":

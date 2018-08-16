@@ -4,6 +4,6 @@ fixtures:
     java:            "puppetlabs/java"
     artifactory:     "autostructure/artifactory"
     artifactory_pro: "autostructure/artifactory_pro"
-    wget:            "maestrodev/wget"
+    wget:            "puppet/wget"
   symlinks:
     artifactory_ha: "#{source_dir}"

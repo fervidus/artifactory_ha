@@ -9,8 +9,12 @@
   "issues_url": "https://github.com/autostructure/artifactory_ha/issues",
   "dependencies": [
     {
+      "name": "puppet-wget",
+      "version_requirement": ">= 2.0.0 <= 2.0.1"
+    },
+    {
       "name": "autostructure-artifactory_pro",
-      "version_requirement": ">= 2.0.0"
+      "version_requirement": ">= 2.0.0 <= 2.0.6"
     }
   ],
   "operatingsystem_support": [
