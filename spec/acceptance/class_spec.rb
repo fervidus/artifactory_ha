@@ -25,11 +25,11 @@ describe 'artifactory_ha class' do
       apply_manifest(pp, catch_changes: true)
     end
 
-    describe package('artifactory_ha') do
+    describe package('jfrog-artifactory-ha') do
       it { is_expected.to be_installed }
     end
 
-    describe service('artifactory_ha') do
+    describe service('artifactory') do
       it { is_expected.to be_enabled }
       it { is_expected.to be_running }
     end
