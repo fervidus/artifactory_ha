@@ -10,11 +10,11 @@
   "dependencies": [
     {
       "name": "puppet-wget",
-      "version_requirement": ">= 2.0.0 <= 2.0.1"
+      "version_requirement": ">= 2.0.0 <= 2.0.0"
     },
     {
       "name": "autostructure-artifactory_pro",
-      "version_requirement": ">= 2.0.0 <= 2.0.6"
+      "version_requirement": ">= 2.0.0 <= 2.0.7"
     }
   ],
   "operatingsystem_support": [

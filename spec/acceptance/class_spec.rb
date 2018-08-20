@@ -25,7 +25,7 @@ describe 'artifactory_ha class' do
       apply_manifest(pp, catch_changes: true)
     end
 
-    describe package('jfrog-artifactory-ha') do
+    describe package('jfrog-artifactory-pro') do
       it { is_expected.to be_installed }
     end
 

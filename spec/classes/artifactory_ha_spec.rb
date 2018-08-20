@@ -34,7 +34,7 @@ describe 'artifactory_ha' do
           it { is_expected.to contain_class('artifactory::service').that_subscribes_to('Class[artifactory_ha::post_config]') }
 
           it { is_expected.to contain_service('artifactory') }
-          it { is_expected.to contain_package('jfrog-artifactory-ha').with_ensure('present') }
+          it { is_expected.to contain_package('jfrog-artifactory-pro').with_ensure('present') }
         end
       end
     end
