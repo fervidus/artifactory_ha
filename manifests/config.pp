@@ -46,7 +46,7 @@ class artifactory_ha::config {
     content => "security.token=${::artifactory_ha::security_token}",
   }
 
-  file { "${::artifactory_ha::cluster_home}/ha-etc/db.properties":
+  file { "${::artifactory::artifactory_home}/etc/db.properties":
     ensure  => file,
     content => epp(
       'artifactory/db.properties.epp',
