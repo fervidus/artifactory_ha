@@ -4,7 +4,7 @@ describe 'artifactory_ha' do
   let(:params) do
     {
       license_key: 'my_license_key',
-      jdbc_driver_url: 'http://autostructure.com/my_url',
+      jdbc_driver_url: 'http://192.168.0.128/mysql-connector-java-8.0.12.jar',
       db_type: 'mysql',
       db_url: 'jdbc:oracle:sad',
       db_username: 'my_db_user',

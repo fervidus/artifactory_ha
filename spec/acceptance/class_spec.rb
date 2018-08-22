@@ -7,9 +7,9 @@ describe 'artifactory_ha class' do
       pp = <<-EOS
       class { 'artifactory_ha':
             license_key => 'my_license_key',
-            jdbc_driver_url => 'https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war',
+            jdbc_driver_url => 'http://192.168.0.128/mysql-connector-java-8.0.12.jar',
             db_type => 'mysql',
-            db_url => 'jdbc:oracle:sad',
+            db_url => 'https://downloads.mariadb.org/mariadb/10.3.9/',
             db_username => 'my_db_user',
             db_password => 'egpiqwgoq[hgewoiehf]',
             security_token => '123security_token_4me',
