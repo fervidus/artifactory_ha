@@ -1,6 +1,6 @@
 {
   "name": "autostructure-artifactory_ha",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "author": "Bryan Belanger",
   "summary": "Installs Artifactory high availability",
   "license": "Apache-2.0",

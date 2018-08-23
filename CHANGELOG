@@ -1,3 +1,6 @@
+2018-08-23 Release 2.0.6
+-Modified Artifactory HA to work with updated version of Pro
+
 2016-08-25 Release 2.0.5
 - Ensure Artifactory Pro is configured before Artifactory HA.
 
