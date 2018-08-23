@@ -6,12 +6,12 @@ describe 'artifactory_ha class' do
     it 'will work idempotently with no errors' do
       pp = <<-EOS
       class { 'artifactory_ha':
-            license_key => 'my_license_key',
+            license_key => 'key123',
             jdbc_driver_url => 'http://192.168.0.152/mysql-connector-java-8.0.12.jar',
             db_type => 'mysql',
             db_url => 'jdbc:mysql://192.168.0.152/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC',
-            db_username => 'tester',
-            db_password => 'testing',
+            db_username => 'artifactory',
+            db_password => 'password',
             security_token => '123security_token_4me',
             is_primary => true,
             cluster_home => '/tmp/',
