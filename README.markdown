@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/autostructure/artifactory_ha.svg?branch=master)](https://travis-ci.org/autostructure/artifactory_ha)
-[![Puppet Forge](https://img.shields.io/puppetforge/v/autostructure/artifactory_ha.svg)](https://forge.puppetlabs.com/autostructure/artifactory_ha)
-[![Puppet Forge](https://img.shields.io/puppetforge/f/autostructure/artifactory_ha.svg)](https://forge.puppetlabs.com/autostructure/artifactory_ha)
+[![Build Status](https://travis-ci.org/fervid/artifactory_ha.svg?branch=master)](https://travis-ci.org/fervid/artifactory_ha)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/fervid/artifactory_ha.svg)](https://forge.puppetlabs.com/fervid/artifactory_ha)
+[![Puppet Forge](https://img.shields.io/puppetforge/f/fervid/artifactory_ha.svg)](https://forge.puppetlabs.com/fervid/artifactory_ha)
 
 #### Table of Contents
 
@@ -20,9 +20,9 @@ This ONLY install Artifactory HA.
 
 If you are looking for the regulare commercial installation, or OSS, look at:
 
-Artifactory OSS: https://forge.puppet.com/autostructure/artifactory
+Artifactory OSS: https://forge.puppet.com/fervid/artifactory
 
-Artifactory PRO: https://forge.puppet.com/autostructure/artifactory_pro
+Artifactory PRO: https://forge.puppet.com/fervid/artifactory_pro
 
 Github and gitlab are great for storing source control, but bad at storing installers and compiled packages.
 
@@ -214,6 +214,7 @@ Since your module is awesome, other users will want to play with it. Let them kn
 
 ### Authors
 
-This module is based on work by Autostructure. The following contributors have contributed to this module:
+This module is based on work by Fervid. The following contributors have contributed to this module:
 
 * Bryan Belanger
+* Paul Talbot

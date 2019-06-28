@@ -1,19 +1,19 @@
 {
-  "name": "autostructure-artifactory_ha",
+  "name": "fervid-artifactory_ha",
   "version": "2.0.6",
   "author": "Bryan Belanger",
   "summary": "Installs Artifactory high availability",
   "license": "Apache-2.0",
-  "source": "https://github.com/autostructure/artifactory_ha.git",
-  "project_page": "https://github.com/autostructure/artifactory_ha",
-  "issues_url": "https://github.com/autostructure/artifactory_ha/issues",
+  "source": "https://github.com/fervidus/artifactory_ha.git",
+  "project_page": "https://github.com/fervidus/artifactory_ha",
+  "issues_url": "https://github.com/fervidus/artifactory_ha/issues",
   "dependencies": [
     {
       "name": "puppet-wget",
       "version_requirement": ">= 2.0.0 <= 2.0.0"
     },
     {
-      "name": "autostructure-artifactory_pro",
+      "name": "fervid-artifactory_pro",
       "version_requirement": ">= 2.0.0 <= 2.0.7"
     }
   ],
