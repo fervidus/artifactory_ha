@@ -13,7 +13,7 @@
 
 class artifactory_ha(
   String $jdbc_driver_url,
-  Enum['mssql', 'mysql', 'oracle', 'postgresql'] $db_type,
+  Enum['mariadb', 'mssql', 'mysql', 'oracle', 'postgresql'] $db_type,
   String $db_url,
   String $db_username,
   String $db_password,
@@ -22,6 +22,8 @@ class artifactory_ha(
   String $cluster_home,
   String $license_key,
   Integer $membership_port                                                = 10001,
+  Boolean $manage_java                                                    = true,
+  Boolean $manage_repo                                                    = true,
   String $yum_name                                                        = 'bintray-jfrog-artifactory-pro-rpms',
   String $yum_baseurl                                                     = 'http://jfrog.bintray.com/artifactory-pro-rpms',
   String $package_name                                                    = 'jfrog-artifactory-pro',
@@ -41,6 +43,8 @@ class artifactory_ha(
     yum_name     => $yum_name,
     yum_baseurl  => $yum_baseurl,
     package_name => $package_name,
+    manage_java  => $manage_java,
+    manage_repo  => $manage_repo,
   }
   -> class{'::artifactory_ha::config': }
   -> class{'::artifactory_ha::post_config': }
