@@ -113,13 +113,19 @@ This can be changed if Artifactory needs to be setup from a different repository
 
 Sets the package name to install. Defaults to 'jfrog-artifactory-pro'.
 
-This can be changed if Artifactory needs to install a differently named package. Possibly needed if na organization creates their own Artifactory package.
+This can be changed if Artifactory needs to install a differently named package. Possibly needed if an organization creates their own Artifactory package.
 
 ##### `manage_java`
 
 Tells the module whether or not to manage the java class. This defaults to true. Usually this is what you want.
 
 If your organization actively manages the java installs across your environment set this to false.
+
+##### `manage_repo`
+
+Tells the module whether or not to manage the Artifactory YUM repository. This defaults to true.
+
+If Artifactory YUM repository is already managed set this to false.
 
 ##### `jdbc_driver_url`
 
@@ -129,7 +135,7 @@ This is required if using a new data source.
 
 ##### `db_type`
 
-The type of database to configure for. Valid values are 'mssql', 'mysql', 'oracle', 'postgresql'.
+The type of database to configure for. Valid values are 'mariadb', 'mssql', 'mysql', 'oracle', 'postgresql'.
 
 ##### `db_hostname`
 
